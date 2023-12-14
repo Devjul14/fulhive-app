@@ -5,13 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Shop extends Model
+class Role extends Model
 {
     use HasFactory;
-
-    protected $guarded = ['id'];
-
-    public function sellers(){
-        return $this->hasMany(Seller::class);
-    }
 }

@@ -2,16 +2,12 @@
 
 namespace App\Models;
 
-use App\Models\Shop;
-use App\Models\User;
 use App\Models\Invoices;
-use App\Models\Products;
-use App\Models\Warehouses;
 use App\Models\Transactions;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Seller extends Model
+class Warehouses extends Model
 {
     use HasFactory;
 
@@ -21,8 +17,8 @@ class Seller extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function shops(){
-        return $this->belongsTo(Shop::class);
+    public function sellers(){
+        return  $this->belongsToMany(Seller::class, 'warehouse_id');
     }
 
     public function products(){
@@ -31,10 +27,6 @@ class Seller extends Model
 
     public function transactions(){
         return $this->hasMany(Transactions::class);
-    }
-
-    public function warehouses(){
-        return  $this->belongsToMany(Warehouses::class, 'seller_id');
     }
 
 }

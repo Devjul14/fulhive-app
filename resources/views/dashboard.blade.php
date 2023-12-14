@@ -14,7 +14,7 @@
                         </div>
                     @endif
   
-                    You are Logged In
+                    {{ auth()->user()->getRoleNames(); }} are Logged In
                 </div>
             </div>
         </div>

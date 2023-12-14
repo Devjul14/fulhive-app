@@ -4,14 +4,16 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Seller;
+use App\Models\Warehouses;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -20,7 +22,6 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'username',
         'email',
         'email_verified_at',
         'password',
@@ -45,7 +46,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function seller(){
+    public function sellers(){
         return $this->hasOne(Seller::class);
+    }
+
+    public function warehouses(){
+        return $this->hasOne(Warehouses::class);
     }
 }
