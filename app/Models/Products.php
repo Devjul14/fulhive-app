@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Seller;
 use App\Models\Warehouses;
+use App\Models\ProductCategory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -23,5 +24,9 @@ class Products extends Model
 
     public function warehouses(){
         return $this->belongsTo(Warehouses::class);
+    }
+
+    public function categories(){
+        return $this->belongsTo(ProductCategory::class);
     }
 }
