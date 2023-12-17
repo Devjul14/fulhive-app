@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\SellersController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ProductCategoryController;
@@ -31,4 +32,5 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware('auth')->group(function () {
     Route::resource('/sellers', SellersController::class);
     Route::resource('/productCategory', ProductCategoryController::class);
+    Route::resource('/setting_account', UsersController::class);
 });
