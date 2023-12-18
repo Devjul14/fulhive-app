@@ -122,7 +122,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="{{ url('setting_account') }}">Akun</a>
             <a class="collapse-item" href="login.html">Packaging</a>
-            <a class="collapse-item" href="register.html">Info Toko</a>
+            <a class="collapse-item" href="{{ url('shop') }}">Info Toko</a>
         </div>
     </div>
 </li>
