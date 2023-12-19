@@ -38,5 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/shop', ShopController::class);
 
     //product route group
-    Route::get('/product/allProduct', [ProductController::class,'masterProduct'])->name('masterProduct');
+    Route::get('/product/masterProduct', [ProductController::class,'masterProduct'])->name('masterProduct');
+    Route::get('/product/datatables', [ProductController::class,'masterProductDataTables'])->name('masterProduct.datatables');
+    Route::get('/product/priceSetting', [ProductController::class,'priceSetting'])->name('priceSetting');
 });

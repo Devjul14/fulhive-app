@@ -8,41 +8,40 @@
             <div class="card shadow mb-4">
                 <!-- Nav link -->
                 <div class="card-header py-3 mb-4">
-                    <ul class="nav mt-3 ml-4">
+                    <ul class="nav justify-content-center mt-3 ml-4">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" id="akunLink">All Product</a>
+                            <a class="nav-link" href="#" id="all-product">All Product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" id="timLink">My Team</a>
+                            <a class="nav-link" href="#" id="unit-product">Products Unit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="type-product">Product Type</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="bundling-product">Products Bundling</a>
                         </li>
                     </ul>
                 </div>
                 <div class="card-body">
-                        <div class="row ml-4">
+                        <div class="row ml-4" id="all-productCard" style="">
                             <div class="col-lg-11">
-                                <div class="mb-4">
-                                <button type="button" class="btn btn-outline-primary"><i class="fas fa-solid fa-user-plus"></i>  Add Team</button>
-                                </div>
-                                <table class="table table-striped">
-                                    <thead class="thead-light">
-                                        <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Phone</th>
-                                        <th scope="col">Gender</th>
-                                        <th scope="col">Access</th>
-                                        <th scope="col">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            {!! $dataTable->table(['class' => 'table table-bordered']) !!}
+                            </div>
+                        </div>
+                        <div class="row ml-4" id="unit-productCard" style="display: none;">
+                            <div class="col-lg-11"><h6>unit</h6>
+                            {!! $dataTable->table(['class' => 'table table-bordered']) !!}
+                            </div>
+                        </div>
+                        <div class="row ml-4" id="type-productCard" style="display: none;">
+                            <div class="col-lg-11"><h6>type</h6>
+                            {!! $dataTable->table(['class' => 'table table-bordered']) !!}
+                            </div>
+                        </div>
+                        <div class="row ml-4" id="bundling-productCard" style="display: none;">
+                            <div class="col-lg-11"><h6>bundling</h6>
+                            {!! $dataTable->table(['class' => 'table table-bordered']) !!}
                             </div>
                         </div>
                     </div>
@@ -53,33 +52,60 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <script>
-  // Inisialisasi saat halaman dimuat
   $(document).ready(function() {
-    // Atur fungsi klik untuk tautan "Akun Saya"
-    $("#akunLink").addClass("active");
-    $("#akunCard").show();
+    $("#all-product").addClass("active");
+    $("#all-productCard").show();
 
-    $("#akunLink").click(function() {
-      // Aktifkan tautan dan tampilkan kartu "Akun Saya"
-      $("#akunLink").addClass("active");
-      $("#timLink").removeClass("active");
-      $("#akunCard").show();
-      $("#timCard").hide();
+    $("#all-product").click(function() {
+      $("#all-product").addClass("active");
+      $("#unit-product").removeClass("active");
+      $("#type-product").removeClass("active");
+      $("#bundling-product").removeClass("active");
+      $("#all-productCard").show();
+      $("#unit-productCard").hide();
+      $("#type-productCard").hide();
+      $("#bundling-productCard").hide();
     });
 
-    // Atur fungsi klik untuk tautan "Tim Saya"
-    $("#timLink").click(function() {
-      // Aktifkan tautan dan tampilkan kartu "Tim Saya"
-      $("#timLink").addClass("active");
-      $("#akunLink").removeClass("active");
-      $("#timCard").show();
-      $("#akunCard").hide();
+
+    $("#unit-product").click(function() {
+      $("#unit-product").addClass("active");
+      $("#all-product").removeClass("active");
+      $("#type-product").removeClass("active");
+      $("#bundling-product").removeClass("active");
+      $("#unit-productCard").show();
+      $("#all-productCard").hide();
+      $("#type-productCard").hide();
+      $("#bundling-productCard").hide();
+    });
+
+    $("#type-product").click(function() {
+      $("#type-product").addClass("active");
+      $("#bundling-product").removeClass("active");
+      $("#unit-product").removeClass("active");
+      $("#all-product").removeClass("active");
+      $("#type-productCard").show();
+      $("#unit-productCard").hide();
+      $("#all-productCard").hide();
+      $("#bundling-productCard").hide();
+    });
+
+    $("#bundling-product").click(function() {
+      $("#bundling-product").addClass("active");
+      $("#type-product").removeClass("active");
+      $("#unit-product").removeClass("active");
+      $("#all-product").removeClass("active");
+      $("#bundling-productCard").show();
+      $("#type-productCard").hide();
+      $("#unit-productCard").hide();
+      $("#all-productCard").hide();
     });
   });
 </script>
 @endsection
+
+@push('scripts')
+{!! $dataTable->scripts() !!}
+@endpush
