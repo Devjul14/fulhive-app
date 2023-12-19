@@ -2,17 +2,17 @@
 
 @section('content')
 <div class="container-fluid">
-    <h6 class="h3 mb-3 text-gray-800 ml-3">Akun</h6>
+    <h6 class="h3 mb-3 text-gray-800 ml-3">Account</h6>
         <div class="col-lg-12">
 
             <div class="card shadow mb-4">
             <!-- Nav link -->
             <ul class="nav mt-3 ml-4">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="akunLink">Akun Saya</a>
+                    <a class="nav-link" href="#" id="akunLink">Account</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="timLink">Tim Saya</a>
+                    <a class="nav-link" href="#" id="timLink">My Team</a>
                 </li>
             </ul>
             <!-- card akun saya -->
@@ -23,7 +23,7 @@
                                 <div class="card-body">
                                     <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle mx-auto d-block" alt="Profile Photo">
                                     <div class="card-body text-center">
-                                        <button type="button" class="btn btn-outline-primary">Tambah Foto</button>
+                                        <button type="button" class="btn btn-outline-primary">Add Photo</button>
                                     </div>
                                 </div>
                             </div>
@@ -33,20 +33,20 @@
                                 <div class="card mb-4">
                                     <div class="card-body">
                                         <div class="card-header py-3 mb-4">
-                                            <h6 class="m-0 font-weight-bold text-gray-700">Informasi</h6>
+                                            <h6 class="m-0 font-weight-bold text-gray-700">Informasion</h6>
                                         </div>
                                         <!-- <div class="col-md-8"> -->
                                             <form class="ml-3">
                                                 <div class="row">
                                                     <div class="col-lg-5 mr-4">
                                                         <div class="form-group">
-                                                            <label>Nama Lengkap</label>
+                                                            <label>Name</label>
                                                             <input type="text" class="form-control" value="{{ $user->name}}">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-5 mr-4">
                                                         <div class="form-group">
-                                                            <label>Jenis Akses</label>
+                                                            <label>Access</label>
                                                             <input type="text" class="form-control">
                                                         </div>
                                                     </div>
@@ -60,7 +60,7 @@
                                                     </div>
                                                     <div class="col-lg-5 mr-4">
                                                         <div class="form-group">
-                                                            <label>No Handphone</label>
+                                                            <label>Phone</label>
                                                             <input type="text" class="form-control">
                                                         </div>
                                                     </div>
@@ -86,17 +86,17 @@
                     <div class="row ml-4" id="timCard" style="display: none;">
                         <div class="col-lg-11">
                             <div class="mb-4">
-                            <button type="button" class="btn btn-outline-primary"><i class="fas fa-solid fa-user-plus"></i>  Tambah Tim</button>
+                            <button type="button" class="btn btn-outline-primary"><i class="fas fa-solid fa-user-plus"></i>  Add Team</button>
                             </div>
                             <table class="table">
                                 <thead class="thead-light">
                                     <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Nama Personil</th>
-                                    <th scope="col">No Telepon</th>
-                                    <th scope="col">Jenis Kelamin</th>
-                                    <th scope="col">Jenis Akses</th>
-                                    <th scope="col">Aksi</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Phone</th>
+                                    <th scope="col">Gender</th>
+                                    <th scope="col">Access</th>
+                                    <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

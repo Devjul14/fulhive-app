@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SellersController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ProductCategoryController;
@@ -35,4 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/productCategory', ProductCategoryController::class);
     Route::resource('/setting_account', UsersController::class);
     Route::resource('/shop', ShopController::class);
+
+    //product route group
+    Route::get('/product/allProduct', [ProductController::class,'masterProduct'])->name('masterProduct');
 });
