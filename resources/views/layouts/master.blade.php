@@ -26,6 +26,12 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('asset/css/sb-admin-2.min.css') }}" rel="stylesheet">
+
+    <!-- data table -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.6/css/dataTables.bootstrap4.min.css">
+    <script src="https://cdn.datatables.net/1.11.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.6/js/dataTables.bootstrap4.min.js"></script>
+
 </head>
 
 
@@ -78,9 +84,7 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('asset/vendor/jquery/jquery.min.js') }}"></script>
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('asset/vendor/jquery/jquery.min.js') }}"></script>
+    <!-- <script src="{{ asset('asset/vendor/jquery/jquery.min.js') }}"></script> -->
     <script src="{{ asset('asset/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- Core plugin JavaScript-->
@@ -96,14 +100,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('asset/js/sb-admin-2.min.js') }}"></script>
-
-
-    <!-- Page level plugins -->
-    <script src="{{ asset('asset/vendor/chart.js/Chart.min.js') }}"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="{{ asset('asset/js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('asset/js/demo/chart-pie-demo.js') }}"></script>
     @stack('scripts')
 
 </body>

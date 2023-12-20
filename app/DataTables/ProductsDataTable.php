@@ -23,7 +23,7 @@ class ProductsDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'products.action')
+            ->addColumn('action', 'product.action')
             ->setRowId('id');
     }
 
@@ -32,7 +32,11 @@ class ProductsDataTable extends DataTable
      */
     public function query(Products $model): QueryBuilder
     {
-        return $model->newQuery();
+        $result = $model->newQuery()
+        ->with('sellers')
+        ->select('*');
+
+        return $result;
     }
 
     /**
@@ -54,7 +58,8 @@ class ProductsDataTable extends DataTable
                         Button::make('print'),
                         Button::make('reset'),
                         Button::make('reload')
-                    ]);
+                    ])
+                    ;
     }
 
     /**
@@ -63,11 +68,10 @@ class ProductsDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-
-            Column::make('product'),
-            Column::make('type'),
+            // Column::make('id'),
+            Column::make('name')->title('Product'),
+            Column::make('category_id')->title('Type'),
             Column::make('sku'),
-            Column::make('stock'),
             Column::make('cost_of_goods'),
             Column::make('consumer_price'),
             Column::make('status'),

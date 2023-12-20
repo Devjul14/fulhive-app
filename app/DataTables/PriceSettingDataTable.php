@@ -2,15 +2,16 @@
 
 namespace App\DataTables;
 
+use App\Models\Products;
 use App\Models\PriceSetting;
-use Illuminate\Database\Eloquent\Builder as QueryBuilder;
-use Yajra\DataTables\EloquentDataTable;
-use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
+use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
+use Yajra\DataTables\Html\Builder as HtmlBuilder;
+use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 
 class PriceSettingDataTable extends DataTable
 {
@@ -29,9 +30,13 @@ class PriceSettingDataTable extends DataTable
     /**
      * Get the query source of dataTable.
      */
-    public function query(PriceSetting $model): QueryBuilder
+    public function query(Products $model): QueryBuilder
     {
-        return $model->newQuery();
+        $result = $model->newQuery()
+        ->with('sellers')
+        ->select('*');
+
+        return $result;
     }
 
     /**
@@ -40,7 +45,7 @@ class PriceSettingDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('pricesetting-table')
+                    ->setTableId('products')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     //->dom('Bfrtip')
@@ -62,10 +67,9 @@ class PriceSettingDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            Column::make('product'),
+            Column::make('name')->title('Product'),
             Column::make('cost_of_goods'),
             Column::make('consumer_price'),
-            Column::make('dropship_price'),
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)

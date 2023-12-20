@@ -24,24 +24,24 @@
                     </ul>
                 </div>
                 <div class="card-body">
-                        <div class="row ml-4" id="all-productCard" style="">
+                        <div class="row ml-4" id="all-productCard">
                             <div class="col-lg-11">
-                            {!! $dataTable->table(['class' => 'table table-bordered']) !!}
+                            {{ $dataTable->table() }}
                             </div>
                         </div>
                         <div class="row ml-4" id="unit-productCard" style="display: none;">
                             <div class="col-lg-11"><h6>unit</h6>
-                            {!! $dataTable->table(['class' => 'table table-bordered']) !!}
+                            {{ $dataTable->table() }}
                             </div>
                         </div>
                         <div class="row ml-4" id="type-productCard" style="display: none;">
                             <div class="col-lg-11"><h6>type</h6>
-                            {!! $dataTable->table(['class' => 'table table-bordered']) !!}
+                            {{ $dataTable->table() }}
                             </div>
                         </div>
                         <div class="row ml-4" id="bundling-productCard" style="display: none;">
                             <div class="col-lg-11"><h6>bundling</h6>
-                            {!! $dataTable->table(['class' => 'table table-bordered']) !!}
+                            {{ $dataTable->table() }}
                             </div>
                         </div>
                     </div>
@@ -107,5 +107,5 @@
 @endsection
 
 @push('scripts')
-{!! $dataTable->scripts() !!}
+    {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
 @endpush
