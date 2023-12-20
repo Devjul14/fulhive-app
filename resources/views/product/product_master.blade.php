@@ -8,7 +8,7 @@
             <div class="card shadow mb-4">
                 <!-- Nav link -->
                 <div class="card-header py-3 mb-4">
-                    <ul class="nav justify-content-center mt-3 ml-4">
+                    <ul class="nav nav-pills mt-3">
                         <li class="nav-item">
                             <a class="nav-link" href="#" id="all-product">All Product</a>
                         </li>

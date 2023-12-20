@@ -7,7 +7,7 @@
 
             <div class="card shadow mb-4">
             <!-- Nav link -->
-            <ul class="nav mt-3 ml-4">
+            <ul class="nav nav-pills mt-3 ml-4">
                 <li class="nav-item">
                     <a class="nav-link" href="#" id="akunLink">Account</a>
                 </li>
