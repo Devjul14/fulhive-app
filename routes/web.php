@@ -45,5 +45,6 @@ Route::middleware('auth')->group(function () {
 
     //warehouse route
     Route::get('/warehouseFind', [WarehousesController::class,'find'])->name('find');
+    Route::get('/mywarehouse', [WarehousesController::class,'mywarehouse'])->name('mywarehouse');
 
 });

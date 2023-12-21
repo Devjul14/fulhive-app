@@ -32,6 +32,8 @@
     <script src="https://cdn.datatables.net/1.11.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.6/js/dataTables.bootstrap4.min.js"></script>
 
+
+
 </head>
 
 
@@ -84,7 +86,7 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <!-- <script src="{{ asset('asset/vendor/jquery/jquery.min.js') }}"></script> -->
+
     <script src="{{ asset('asset/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- Core plugin JavaScript-->

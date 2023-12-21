@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Warehouses;
 use Illuminate\Http\Request;
+use App\DataTables\WarehousesDataTable;
 
 class WarehousesController extends Controller
 {
@@ -18,6 +19,10 @@ class WarehousesController extends Controller
         return view('warehouse.find', [
             'warehouses' => $warehouses
         ]);
+    }
+
+    public function mywarehouse(WarehousesDataTable $dataTable){
+        return $dataTable->render('warehouse.mywarehouse');
     }
 
     public function index()

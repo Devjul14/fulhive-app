@@ -22,7 +22,7 @@
 </div>
 
 <!-- Nav Item - Dashboard -->
-<li class="nav-item active">
+<li class="nav-item @if(Request::is('dashboard')) active @endif">
     <a class="nav-link" href="{{ url('dashboard') }}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
@@ -37,7 +37,7 @@
 
 
 <!-- Nav Item - Product -->
-<li class="nav-item">
+<li class="nav-item @if(Request::is('masterProduct') || Request::is('maspriceSettingterProduct')) active @endif">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
         aria-expanded="true" aria-controls="collapseTwo">
         <i class="fas fa-solid fa-cubes"></i>
@@ -45,7 +45,7 @@
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{ route('masterProduct') }}">Master Products</a>
+            <a class="collapse-item @if(Request::is('masterProduct')) active @endif" href="{{ route('masterProduct') }}">Master Products</a>
             <a class="collapse-item" href="{{ route('priceSetting') }}">Price Setting</a>
             <a class="collapse-item" href="{{ route('productMarketplace') }}">Marketplace Product</a>
             <a class="collapse-item" href="cards.html">Product Setting</a>
@@ -85,7 +85,7 @@
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="{{ route('find') }}">Find Warehouse</a>
-            <a class="collapse-item" href="register.html">My Warehouses</a>
+            <a class="collapse-item" href="{{ route('mywarehouse') }}">My Warehouses</a>
             <a class="collapse-item" href="forgot-password.html">Move Warehouse</a>
             <a class="collapse-item" href="forgot-password.html">Exit Warehouse</a>
         </div>
@@ -145,4 +145,19 @@
 </li>
 
 </ul>
+
+<script>
+$(document).ready(function() {
+    // Your custom script
+    $(".nav-item").click(function() {
+        $(".nav-item").removeClass("active");
+        $(this).addClass("active");
+    });
+
+    $(".collapse-item").click(function() {
+        $(".collapse-item").removeClass("active");
+        $(this).addClass("active").parents('.nav-item').addClass("active");
+    });
+});
+</script>
 <!-- End of Sidebar -->
