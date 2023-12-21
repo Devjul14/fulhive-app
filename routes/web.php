@@ -6,6 +6,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SellersController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\WarehousesController;
 use App\Http\Controllers\ProductCategoryController;
 
 /*
@@ -41,4 +42,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/product', [ProductController::class,'index'])->name('masterProduct');
     Route::get('priceSetting', [ProductController::class,'priceSetting'])->name('priceSetting');
     Route::get('productMarketplace', [ProductController::class,'productMarketplace'])->name('productMarketplace');
+
+    //warehouse route
+    Route::get('/warehouseFind', [WarehousesController::class,'find'])->name('find');
+
 });

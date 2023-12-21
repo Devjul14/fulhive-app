@@ -84,7 +84,7 @@
     </a>
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="login.html">Find Warehouse</a>
+            <a class="collapse-item" href="{{ route('find') }}">Find Warehouse</a>
             <a class="collapse-item" href="register.html">My Warehouses</a>
             <a class="collapse-item" href="forgot-password.html">Move Warehouse</a>
             <a class="collapse-item" href="forgot-password.html">Exit Warehouse</a>
