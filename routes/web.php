@@ -46,5 +46,7 @@ Route::middleware('auth')->group(function () {
     //warehouse route
     Route::get('/warehouseFind', [WarehousesController::class,'find'])->name('find');
     Route::get('/mywarehouse', [WarehousesController::class,'mywarehouse'])->name('mywarehouse');
+    Route::get('/warehouseMove', [WarehousesController::class, 'move'])->name('move');
+    Route::get('/warehouseExit', [WarehousesController::class, 'exit'])->name('exit');
 
 });

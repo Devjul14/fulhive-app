@@ -25,6 +25,26 @@ class WarehousesController extends Controller
         return $dataTable->render('warehouse.mywarehouse');
     }
 
+    public function move()
+    {
+        //
+        $warehouses = Warehouses::latest()->paginate(5);
+        // dd($warehouses);
+        return view('warehouse.move', [
+            'warehouses' => $warehouses
+        ]);
+    }
+
+    public function exit()
+    {
+        //
+        $warehouses = Warehouses::latest()->paginate(5);
+        // dd($warehouses);
+        return view('warehouse.exit', [
+            'warehouses' => $warehouses
+        ]);
+    }
+
     public function index()
     {
         //
