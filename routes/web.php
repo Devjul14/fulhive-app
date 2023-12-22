@@ -52,5 +52,7 @@ Route::middleware('auth')->group(function () {
 
     // inventory route
     Route::get('/inbound', [InventoryController::class, 'inbound'])->name('inbound');
+    Route::get('/stock', [InventoryController::class, 'stock'])->name('stock');
+    Route::get('/stocklist', [InventoryController::class, 'stocklist'])->name('stocklist');
 
 });

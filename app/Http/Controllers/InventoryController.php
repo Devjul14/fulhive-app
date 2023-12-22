@@ -10,4 +10,14 @@ class InventoryController extends Controller
     {
         return view('inventory.inbound');
     }
+
+    public function stock()
+    {
+        return view('inventory.stock');
+    }
+
+    public function stocklist()
+    {
+        return view('inventory.stocklist');
+    }
 }

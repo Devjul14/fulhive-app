@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
+    <h6 class="h3 mb-3 text-gray-800 ml-3">Inbound</h6>
     <div class="row justify-content-between">
         <div class="col-lg-4">
             <div class="form-group col-md-8">
@@ -23,7 +24,7 @@
                 </button>
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                        Dropdown button
+                        Buat Inbound
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Send Stock</a>

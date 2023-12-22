@@ -62,7 +62,7 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('inbound') }}">Inbound</a>
-                <a class="collapse-item" href="utilities-border.html">Stock</a>
+                <a class="collapse-item" href="{{ route('stock') }}">Stock</a>
                 <a class="collapse-item" href="utilities-animation.html">Mutation Stock</a>
                 <a class="collapse-item" href="utilities-other.html">Stock Spesial Event</a>
                 <a class="collapse-item" href="utilities-other.html">QC Middle</a>
