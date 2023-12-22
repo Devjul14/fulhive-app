@@ -6,6 +6,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SellersController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\WarehousesController;
 use App\Http\Controllers\ProductCategoryController;
 
@@ -39,14 +40,17 @@ Route::middleware('auth')->group(function () {
     Route::resource('/shop', ShopController::class);
 
     //product route group
-    Route::get('/product', [ProductController::class,'index'])->name('masterProduct');
-    Route::get('priceSetting', [ProductController::class,'priceSetting'])->name('priceSetting');
-    Route::get('productMarketplace', [ProductController::class,'productMarketplace'])->name('productMarketplace');
+    Route::get('/product', [ProductController::class, 'index'])->name('masterProduct');
+    Route::get('priceSetting', [ProductController::class, 'priceSetting'])->name('priceSetting');
+    Route::get('productMarketplace', [ProductController::class, 'productMarketplace'])->name('productMarketplace');
 
     //warehouse route
-    Route::get('/warehouseFind', [WarehousesController::class,'find'])->name('find');
-    Route::get('/mywarehouse', [WarehousesController::class,'mywarehouse'])->name('mywarehouse');
+    Route::get('/warehouseFind', [WarehousesController::class, 'find'])->name('find');
+    Route::get('/mywarehouse', [WarehousesController::class, 'mywarehouse'])->name('mywarehouse');
     Route::get('/warehouseMove', [WarehousesController::class, 'move'])->name('move');
     Route::get('/warehouseExit', [WarehousesController::class, 'exit'])->name('exit');
+
+    // inventory route
+    Route::get('/inbound', [InventoryController::class, 'inbound'])->name('inbound');
 
 });

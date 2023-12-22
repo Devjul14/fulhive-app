@@ -22,7 +22,7 @@
     </div>
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item {{ Request::is('dashboard') ? 'active' : '' }}">
+    <li class="nav-item {{ request()->is('dashboard') ? 'active' : '' }}">
         <a class="nav-link" href="{{ url('dashboard') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
@@ -37,20 +37,21 @@
 
 
     <!-- Nav Item - Product -->
-    <li class="nav-item {{ Request::is('products*') ? 'active' : '' }}">
+    <li class="nav-item {{ request()->is('products*') ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-solid fa-cubes"></i>
             <span>Products</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseTwo" class="collapse {{ request()->is('masterProduct*') || request()->is('priceSetting*') || request()->is('productMarketplace*')  ? 'show' : '' }}" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item {{ Request::is('masterProduct') ? 'active' : '' }}" href="{{ route('masterProduct') }}">Master Products</a>
-                <a class="collapse-item" href="{{ route('priceSetting') }}">Price Setting</a>
-                <a class="collapse-item" href="{{ route('productMarketplace') }}">Marketplace Product</a>
+                <a class="collapse-item {{ request()->is('masterProduct') ? 'active' : '' }}" href="{{ route('masterProduct') }}">Master Products</a>
+                <a class="collapse-item {{ request()->is('priceSetting') ? 'active' : '' }}" href="{{ route('priceSetting') }}">Price Setting</a>
+                <a class="collapse-item {{ request()->is('productMarketplace') ? 'active' : '' }}" href="{{ route('productMarketplace') }}">Marketplace Product</a>
                 <a class="collapse-item" href="cards.html">Product Setting</a>
             </div>
         </div>
     </li>
+
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
@@ -60,7 +61,7 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="utilities-color.html">Inbound</a>
+                <a class="collapse-item" href="{{ route('inbound') }}">Inbound</a>
                 <a class="collapse-item" href="utilities-border.html">Stock</a>
                 <a class="collapse-item" href="utilities-animation.html">Mutation Stock</a>
                 <a class="collapse-item" href="utilities-other.html">Stock Spesial Event</a>
