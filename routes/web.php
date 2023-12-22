@@ -40,15 +40,15 @@ Route::middleware('auth')->group(function () {
     Route::resource('/shop', ShopController::class);
 
     //product route group
-    Route::get('/product', [ProductController::class, 'index'])->name('masterProduct');
-    Route::get('priceSetting', [ProductController::class, 'priceSetting'])->name('priceSetting');
-    Route::get('productMarketplace', [ProductController::class, 'productMarketplace'])->name('productMarketplace');
+    Route::get('/product', [ProductController::class, 'product'])->name('product');
+    Route::get('/pricesetting', [ProductController::class, 'pricesetting'])->name('pricesetting');
+    Route::get('/marketplace', [ProductController::class, 'marketplace'])->name('marketplace');
 
     //warehouse route
-    Route::get('/warehouseFind', [WarehousesController::class, 'find'])->name('find');
+    Route::get('/find', [WarehousesController::class, 'find'])->name('find');
     Route::get('/mywarehouse', [WarehousesController::class, 'mywarehouse'])->name('mywarehouse');
-    Route::get('/warehouseMove', [WarehousesController::class, 'move'])->name('move');
-    Route::get('/warehouseExit', [WarehousesController::class, 'exit'])->name('exit');
+    Route::get('/move', [WarehousesController::class, 'move'])->name('move');
+Route::get('/exit', [WarehousesController::class, 'exit'])->name('exit');
 
     // inventory route
     Route::get('/inbound', [InventoryController::class, 'inbound'])->name('inbound');

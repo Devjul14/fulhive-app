@@ -8,7 +8,7 @@
             <div class="form-group col-md-8">
                 <label for="">Pilih Gudang</label>
                 <select class="form-control" id="select2-periode">
-                    <option value="all">Example</option>
+                <option value="all">Example</option>
                     <option value="all">Test</option>
                     <!-- Add other warehouse options here -->
                 </select>

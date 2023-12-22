@@ -36,33 +36,32 @@
     </li>
 
 
-    <!-- Nav Item - Product -->
-    <li class="nav-item {{ request()->is('products*') ? 'active' : '' }}">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-solid fa-cubes"></i>
+    <!-- Nav Item - Utilities Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed{{ Request::is('product') ? ' active' : '' }}" href="#" data-toggle="collapse" data-target="#collapseProducts" aria-expanded="true" aria-controls="collapseProducts">
+            <i class="fas fa-solid fa-box"></i>
             <span>Products</span>
         </a>
-        <div id="collapseTwo" class="collapse {{ request()->is('masterProduct*') || request()->is('priceSetting*') || request()->is('productMarketplace*')  ? 'show' : '' }}" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseProducts" class="collapse{{ Request::is('product') || Request::is('pricesetting') || Request::is('marketplace') ? ' show' : '' }}" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item {{ request()->is('masterProduct') ? 'active' : '' }}" href="{{ route('masterProduct') }}">Master Products</a>
-                <a class="collapse-item {{ request()->is('priceSetting') ? 'active' : '' }}" href="{{ route('priceSetting') }}">Price Setting</a>
-                <a class="collapse-item {{ request()->is('productMarketplace') ? 'active' : '' }}" href="{{ route('productMarketplace') }}">Marketplace Product</a>
+                <a class="collapse-item{{ Request::is('product') ? ' active' : '' }}" href="{{ route('product') }}">Master Products</a>
+                <a class="collapse-item{{ Request::is('pricesetting') ? ' active' : '' }}" href="{{ route('pricesetting') }}">Price Setting</a>
+                <a class="collapse-item{{ Request::is('marketplace') ? ' active' : '' }}" href="{{ route('marketplace') }}">Marketplace Product</a>
                 <a class="collapse-item" href="cards.html">Product Setting</a>
             </div>
         </div>
     </li>
 
-
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed{{ Request::is('inbound') ? ' active' : '' }}" href="#" data-toggle="collapse" data-target="#collapseInventory" aria-expanded="true" aria-controls="collapseInventory">
             <i class="fas fa-solid fa-box"></i>
             <span>Inventory</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapseInventory" class="collapse{{ Request::is('inbound') || Request::is('stock') ? ' show' : '' }}" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('inbound') }}">Inbound</a>
-                <a class="collapse-item" href="{{ route('stock') }}">Stock</a>
+                <a class="collapse-item{{ Request::is('inbound') ? ' active' : '' }}" href="{{ route('inbound') }}">Inbound</a>
+                <a class="collapse-item{{ Request::is('stock') ? ' active' : '' }}" href="{{ route('stock') }}">Stock</a>
                 <a class="collapse-item" href="utilities-animation.html">Mutation Stock</a>
                 <a class="collapse-item" href="utilities-other.html">Stock Spesial Event</a>
                 <a class="collapse-item" href="utilities-other.html">QC Middle</a>
@@ -72,22 +71,21 @@
         </div>
     </li>
 
-
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item has-treeview {{ Request::is('find') ? 'menu-open' : '' }}">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-            <i class="fas fa-solid fa-warehouse"></i>
+    <li class="nav-item">
+        <a class="nav-link collapsed{{ Request::is('find') ? ' active' : '' }}" href="#" data-toggle="collapse" data-target="#collapseWarehouse" aria-expanded="true" aria-controls="collapseWarehouse">
+            <i class="fas fa-solid fa-box"></i>
             <span>Warehouses</span>
         </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapseWarehouse" class="collapse{{ Request::is('find') || Request::is('mywarehouse') || Request::is('move') || Request::is('exit') ? ' show' : '' }}" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item {{ Request::is('find') ? 'active' : '' }}" href="{{ route('find') }}">Find Warehouse</a>
-                <a class="collapse-item" href="{{ route('mywarehouse') }}">My Warehouses</a>
-                <a class="collapse-item" href="{{ route('move') }}">Move Warehouse</a>
-                <a class="collapse-item" href="{{ route('exit') }}">Exit Warehouse</a>
+                <a class="collapse-item{{ Request::is('find') ? ' active' : '' }}" href="{{ route('find') }}">Find Warehouse</a>
+                <a class="collapse-item{{ Request::is('mywarehouse') ? ' active' : '' }}" href="{{ route('mywarehouse') }}">My Warehouses</a>
+                <a class="collapse-item{{ Request::is('move') ? ' active' : '' }}" href="{{ route('move') }}">Move Warehouse</a>
+                <a class="collapse-item{{ Request::is('exit') ? ' active' : '' }}" href="{{ route('exit') }}">Exit Warehouse</a>
             </div>
         </div>
     </li>
+
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
