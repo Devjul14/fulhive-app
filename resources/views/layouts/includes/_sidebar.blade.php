@@ -62,7 +62,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item{{ Request::is('inbound') ? ' active' : '' }}" href="{{ route('inbound') }}">Inbound</a>
                 <a class="collapse-item{{ Request::is('stock') ? ' active' : '' }}" href="{{ route('stock') }}">Stock</a>
-                <a class="collapse-item" href="utilities-animation.html">Mutation Stock</a>
+                <a class="collapse-item{{ Request::is('stocklist') ? ' active' : '' }}" href="{{ route('stocklist') }}">Mutation Stock</a>
                 <a class="collapse-item" href="utilities-other.html">Stock Spesial Event</a>
                 <a class="collapse-item" href="utilities-other.html">QC Middle</a>
                 <a class="collapse-item" href="utilities-other.html">Stock Opname</a>

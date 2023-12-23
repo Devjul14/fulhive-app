@@ -48,11 +48,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/find', [WarehousesController::class, 'find'])->name('find');
     Route::get('/mywarehouse', [WarehousesController::class, 'mywarehouse'])->name('mywarehouse');
     Route::get('/move', [WarehousesController::class, 'move'])->name('move');
-Route::get('/exit', [WarehousesController::class, 'exit'])->name('exit');
+    Route::get('/exit', [WarehousesController::class, 'exit'])->name('exit');
 
     // inventory route
     Route::get('/inbound', [InventoryController::class, 'inbound'])->name('inbound');
     Route::get('/stock', [InventoryController::class, 'stock'])->name('stock');
     Route::get('/stocklist', [InventoryController::class, 'stocklist'])->name('stocklist');
+
+    // transaction route
 
 });
