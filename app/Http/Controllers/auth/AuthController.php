@@ -45,10 +45,12 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
+            'phone' => 'required|unique:users',
             'password' => 'required|min:6',
         ]);
            
         $data = $request->all();
+        // dd($data);
         $check = $this->create($data);
          
         return redirect("dashboard")->withSuccess('Great! You have Successfully loggedin');
@@ -68,6 +70,7 @@ class AuthController extends Controller
       return User::create([
         'name' => $data['name'],
         'email' => $data['email'],
+        'phone' => $data['phone'],
         'password' => Hash::make($data['password'])
       ]);
     }

@@ -86,8 +86,68 @@
                     <div class="row ml-4" id="timCard" style="display: none;">
                         <div class="col-lg-11">
                             <div class="mb-4">
-                            <button type="button" class="btn btn-outline-primary"><i class="fas fa-solid fa-user-plus"></i>  Add Team</button>
+                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addModal"><i class="fas fa-solid fa-user-plus"></i>  Add Team</button>
                             </div>
+                            <!-- Modal -->
+                    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="addModalLabel">Add Team</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="ml-3">
+                                        <div class="row">
+                                            <div class="form-group mr-3">
+                                                <label for="exampleFormControlInput1">Name*</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1" name="name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Emai*</label>
+                                                <input type="email" class="form-control" id="exampleFormControlInput1" name="email">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group mr-3">
+                                                <label for="exampleFormControlInput1">Phone*</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1" name="name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Access Type*</label>
+                                                <select class="form-control form-control">
+                                                    <option>Small select</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label>Gender*</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="pilihan" id="opsi1" value="Opsi 1">
+                                                    <label class="form-check-label" for="opsi1">
+                                                        Male 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="pilihan" id="opsi2" value="Opsi 2">
+                                                    <label class="form-check-label" for="opsi2">
+                                                        Female
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
                             <table class="table">
                                 <thead class="thead-light">
                                     <tr>

@@ -30,6 +30,16 @@
                                   @endif
                               </div>
                           </div>
+
+                          <div class="form-group row">
+                              <label for="phone" class="col-md-4 col-form-label text-md-right">Phone Number</label>
+                              <div class="col-md-6">
+                                  <input type="text" id="phone" class="form-control" name="phone" required autofocus>
+                                  @if ($errors->has('phone'))
+                                      <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                  @endif
+                              </div>
+                          </div>
   
                           <div class="form-group row">
                               <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
