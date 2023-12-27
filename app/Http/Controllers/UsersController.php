@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddTeamsRequest;
+use App\Models\Teams;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,10 +19,16 @@ class UsersController extends Controller
         $user_id = Auth::id();
 
         $user = User::find($user_id);
+        $users = User::with('roles')->where('owner_id', $user_id)->get();
+
+        // dd($users);
         return view('account.index', [
-            'user' => $user
+            'user' => $user,
+            'users' => $users
         ]);
     }
+
+
 
     /**
      * Show the form for creating a new resource.

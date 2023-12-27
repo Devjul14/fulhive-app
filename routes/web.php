@@ -1,14 +1,16 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ShopController;
-use App\Http\Controllers\UsersController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\SellersController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\InventoryController;
-use App\Http\Controllers\WarehousesController;
 use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SellersController;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\TeamsController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\WarehousesController;
+use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +38,7 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware('auth')->group(function () {
     Route::resource('/sellers', SellersController::class);
     Route::resource('/productCategory', ProductCategoryController::class);
-    Route::resource('/setting_account', UsersController::class);
+    Route::resource('/setting_account', UsersController::class)->names(['index' => 'setting_account.index']);
     Route::resource('/shop', ShopController::class);
 
     //product route group
@@ -55,6 +57,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/stock', [InventoryController::class, 'stock'])->name('stock');
     Route::get('/stocklist', [InventoryController::class, 'stocklist'])->name('stocklist');
 
-    // transaction route
-
+    // account route
+    Route::post('/addteams', [TeamsController::class, 'addteams'])->name('addteams');
+    Route::post('/updateteams/{user}', [TeamsController::class, 'updateteams'])->name('updateteams');
+    Route::post('/deleteteams/{user}', [TeamsController::class, 'deleteteams'])->name('deleteteams');
 });
