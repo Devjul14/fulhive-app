@@ -42,12 +42,13 @@
             <i class="fas fa-solid fa-box"></i>
             <span>Products</span>
         </a>
-        <div id="collapseProducts" class="collapse{{ Request::is('product') || Request::is('pricesetting') || Request::is('marketplace') ? ' show' : '' }}" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapseProducts" class="collapse{{ Request::is('product') || Request::is('pricesetting') || Request::is('marketplace') || Request::is('category') ? ' show' : '' }}" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item{{ Request::is('product') ? ' active' : '' }}" href="{{ route('product') }}">Master Products</a>
                 <a class="collapse-item{{ Request::is('pricesetting') ? ' active' : '' }}" href="{{ route('pricesetting') }}">Price Setting</a>
                 <a class="collapse-item{{ Request::is('marketplace') ? ' active' : '' }}" href="{{ route('marketplace') }}">Marketplace Product</a>
                 <a class="collapse-item" href="cards.html">Product Setting</a>
+                <a class="collapse-item{{ Request::is('category') ? ' active' : '' }}" href="{{ route('category') }}">Category Product</a>
             </div>
         </div>
     </li>

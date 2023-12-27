@@ -40,7 +40,7 @@ class ProductCategoryController extends Controller
         $seller = ProductCategory::create($request->all());
 
         return redirect()
-            ->route('productCategory.index')
+            ->route('category')
             ->with('success', 'New productCategory has been created!');
     }
 
@@ -72,7 +72,7 @@ class ProductCategoryController extends Controller
         $productCategory->update($request->all());
 
         return redirect()
-            ->route('productCategory.index')
+            ->route('category')
             ->with('success', 'productCategory has been updated!');
     }
 

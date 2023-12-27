@@ -10,22 +10,30 @@ use App\DataTables\ProductsDataTable;
 use App\DataTables\AllproductsDataTable;
 use App\DataTables\PriceSettingDataTable;
 use App\DataTables\ProductMarketplaceDataTable;
+use App\Models\ProductCategory;
 
 class ProductController extends Controller
 {
     //
-    public function product(ProductsDataTable $dataTable)
+    public function product()
     {
-        return $dataTable->render('product.product_master');
+        $categories = ProductCategory::all();
+        $products = Products::all();
+        return view('product.product_master', compact('products', 'categories'));
+    }
+
+    public function addproduct(Request $request)
+    {
+        dd($request);
     }
 
     public function pricesetting(PriceSettingDataTable $dataTable)
     {
-        return $dataTable->render('product.price_setting');
+        return view('product.price_setting');
     }
 
     public function marketplace(ProductMarketplaceDataTable $dataTable)
     {
-        return $dataTable->render('product.product_marketplace');
+        return view('product.product_marketplace');
     }
 }

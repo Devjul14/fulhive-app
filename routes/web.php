@@ -37,7 +37,7 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware('auth')->group(function () {
     Route::resource('/sellers', SellersController::class);
-    Route::resource('/productCategory', ProductCategoryController::class);
+    Route::resource('/productCategory', ProductCategoryController::class)->names(['index' => 'category']);
     Route::resource('/setting_account', UsersController::class)->names(['index' => 'setting_account.index']);
     Route::resource('/shop', ShopController::class);
 
@@ -45,6 +45,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/product', [ProductController::class, 'product'])->name('product');
     Route::get('/pricesetting', [ProductController::class, 'pricesetting'])->name('pricesetting');
     Route::get('/marketplace', [ProductController::class, 'marketplace'])->name('marketplace');
+    Route::post('/addproduct', [ProductController::class, 'addproduct'])->name('addproduct');
 
     //warehouse route
     Route::get('/index', [WarehousesController::class, 'index'])->name('searchwarehouse');

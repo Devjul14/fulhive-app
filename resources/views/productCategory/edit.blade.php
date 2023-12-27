@@ -28,7 +28,7 @@
 
                         <!-- Submit button -->
                         <button class="btn btn-primary" type="submit">Update</button>
-                        <a class="btn btn-danger" href="{{ route('productCategory.index') }}">Cancel</a>
+                        <a class="btn btn-danger" href="{{ route('category') }}">Cancel</a>
                     </div>
                 </div>
                 <!-- END: seller Details -->
