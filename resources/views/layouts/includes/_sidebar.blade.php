@@ -72,13 +72,13 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link collapsed{{ Request::is('find') ? ' active' : '' }}" href="#" data-toggle="collapse" data-target="#collapseWarehouse" aria-expanded="true" aria-controls="collapseWarehouse">
+        <a class="nav-link collapsed{{ Request::is('searchwarehouse') ? ' active' : '' }}" href="#" data-toggle="collapse" data-target="#collapseWarehouse" aria-expanded="true" aria-controls="collapseWarehouse">
             <i class="fas fa-solid fa-box"></i>
             <span>Warehouses</span>
         </a>
-        <div id="collapseWarehouse" class="collapse{{ Request::is('find') || Request::is('mywarehouse') || Request::is('move') || Request::is('exit') ? ' show' : '' }}" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapseWarehouse" class="collapse{{ Request::is('searchwarehouse') || Request::is('mywarehouse') || Request::is('move') || Request::is('exit') ? ' show' : '' }}" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item{{ Request::is('find') ? ' active' : '' }}" href="{{ route('find') }}">Find Warehouse</a>
+                <a class="collapse-item{{ Request::is('searchwarehouse') ? ' active' : '' }}" href="{{ route('searchwarehouse') }}">Find Warehouse</a>
                 <a class="collapse-item{{ Request::is('mywarehouse') ? ' active' : '' }}" href="{{ route('mywarehouse') }}">My Warehouses</a>
                 <a class="collapse-item{{ Request::is('move') ? ' active' : '' }}" href="{{ route('move') }}">Move Warehouse</a>
                 <a class="collapse-item{{ Request::is('exit') ? ' active' : '' }}" href="{{ route('exit') }}">Exit Warehouse</a>

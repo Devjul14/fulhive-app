@@ -11,7 +11,8 @@ class WarehousesController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function find()
+
+    public function index(Request $request)
     {
         //
         $warehouses = Warehouses::latest()->paginate(5);
@@ -21,7 +22,17 @@ class WarehousesController extends Controller
         ]);
     }
 
-    public function mywarehouse(WarehousesDataTable $dataTable){
+    public function find(Request $request)
+    {
+        //
+        $query = $request->get('query');
+        $warehouses = Warehouses::where('name', 'LIKE', '%' . $query . '%')->get();
+
+        return response()->json($warehouses);
+    }
+
+    public function mywarehouse(WarehousesDataTable $dataTable)
+    {
         return $dataTable->render('warehouse.mywarehouse');
     }
 
@@ -45,10 +56,7 @@ class WarehousesController extends Controller
         ]);
     }
 
-    public function index()
-    {
-        //
-    }
+
 
     /**
      * Show the form for creating a new resource.

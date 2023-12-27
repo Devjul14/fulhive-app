@@ -47,6 +47,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/marketplace', [ProductController::class, 'marketplace'])->name('marketplace');
 
     //warehouse route
+    Route::get('/index', [WarehousesController::class, 'index'])->name('searchwarehouse');
     Route::get('/find', [WarehousesController::class, 'find'])->name('find');
     Route::get('/mywarehouse', [WarehousesController::class, 'mywarehouse'])->name('mywarehouse');
     Route::get('/move', [WarehousesController::class, 'move'])->name('move');
